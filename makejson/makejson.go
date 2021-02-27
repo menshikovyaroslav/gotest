@@ -7,20 +7,21 @@ import (
 
 func main() {
 
-	person := make(map[string]string)
 	var name string
-	var address string
-
-	fmt.Printf("Name: ")
+	fmt.Println("Enter Name:")
 	fmt.Scan(&name)
 
-	fmt.Printf("Address: ")
+	var address string
+	fmt.Println("Enter Address:")
 	fmt.Scan(&address)
 
+	var person = map[string]string{}
 	person["name"] = name
 	person["address"] = address
-	barr, _ := json.Marshal(person)
-	fmt.Println(string(barr))
+
+	b, _ := json.Marshal(person)
+
+	fmt.Println("json: ", string(b))
 
 	var txt string
 	fmt.Scan(&txt)
